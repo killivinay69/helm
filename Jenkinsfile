@@ -127,15 +127,16 @@ spec:
         }
 
     }
-           stage("install helm"){
-               steps {
+      stage("install helm"){
+         steps {
                   sh 'wget https://get.helm.sh/helm-v3.6.1-linux-amd64.tar.gz'
                   sh 'tar -xvzf helm-v3.6.1-linux-amd64.tar.gz'
                   sh 'cp linux-amd64/helm /usr/bin'
                   sh 'helm version'
                  }
      }
-           stage('helm') {
+           
+      stage('helm') {
          steps {
             sh 'helm upgrade --install test-app69 test-app.'
 }
