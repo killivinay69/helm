@@ -34,7 +34,7 @@ spec:
 
   - name: shell
 
-    image: anandsadhu/dotnet-jenkins-slave
+    image: registry.glams.com/glams/jenkins-agent:latest
 
     command:
 
@@ -88,7 +88,7 @@ spec:
 
             steps {
 
-                sh 'docker build -t killivinay69/myapp .'
+                sh 'docker build -t harinath926/hari .'
 
        }
 
@@ -98,7 +98,7 @@ spec:
 
        steps {
 
-            sh 'docker login -u killivinay69 -p @Vinay1999'
+            sh 'docker login -u harinath926 -p Chotu@9999'
 
         }
 
@@ -108,7 +108,7 @@ spec:
 
         steps {
 
-            sh 'docker push killivinay69/myapp'
+            sh 'docker push harinath926/hari'
 
            }
 
@@ -125,24 +125,24 @@ spec:
     sh 'kubectl apply -f service.yaml'
 
         }
-  }
-    stage("install helm"){
-       steps {
-            sh 'wget https://get.helm.sh/helm-v3.6.1-linux-amd64.tar.gz'
-            
-            sh 'tar -xvzf helm-v3.6.1-linux-amd64.tar.gz'
-            sh 'cp linux-amd64/helm /usr/bin'
-            sh 'helm version'
-          }
+
+    }
+           stage("install helm"){
+               steps {
+                  sh 'wget https://get.helm.sh/helm-v3.6.1-linux-amd64.tar.gz'
+                  sh 'tar -xvzf helm-v3.6.1-linux-amd64.tar.gz'
+                  sh 'cp linux-amd64/helm /usr/bin'
+                  sh 'helm version'
+                 }
      }
-      stage('helm') {
-      steps {
-          
-          sh 'helm upgrade --install test-app3 test-app .'
-         }
-     }
+           stage('helm') {
+         steps {
+            sh 'helm upgrade --install test-app69 test-app.'
+}
+}
 
 }
+
+
 
  }
-}
