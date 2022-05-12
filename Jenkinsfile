@@ -66,7 +66,7 @@ spec:
        stage('helm') {
            steps {
                sh 'helm version'
-               sh 'helm upgrade --install test-app69 test-app'
+               sh 'helm upgrade --install test-app0 test-app'
  
              
            }
