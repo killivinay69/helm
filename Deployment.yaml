@@ -5,7 +5,6 @@ kind: Deployment
 metadata:
 
   name: myapp
-  namespace: jenkins
 
 spec:
 
