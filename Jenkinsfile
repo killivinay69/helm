@@ -40,6 +40,9 @@ spec:
             defaultContainer 'shell'
         }
     }
+    envinorment {
+        DOCKERHUB_CREDENTIALS = credentials('token69')
+    }
    stages {
         stage('docker build') {
             steps {
@@ -48,7 +51,7 @@ spec:
     }
    stage('docker login') {
        steps {
-            sh 'docker login -u killivinay69 -p @Vinay1999'
+            sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin '
         }
     }
     stage('docker push') {
