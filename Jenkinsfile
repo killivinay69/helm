@@ -42,6 +42,7 @@ spec:
     }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('token69')
+    }
       stages {
         stage('docker build') {
             steps {
@@ -74,4 +75,4 @@ spec:
            }
        }
      }
-  }
+  
