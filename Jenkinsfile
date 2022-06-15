@@ -42,8 +42,7 @@ spec:
     }
     envinorment {
         DOCKERHUB_CREDENTIALS = credentials('token69')
-    }
-   stages {
+      stages {
         stage('docker build') {
             steps {
                 sh 'docker build -t killivinay69/myapp .'
@@ -71,7 +70,7 @@ spec:
                sh 'helm version'
                sh 'helm upgrade --install test-app0 test-app'
  
-             
+           }
            }
        }
      }
