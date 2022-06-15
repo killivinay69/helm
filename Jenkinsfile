@@ -40,7 +40,7 @@ spec:
             defaultContainer 'shell'
         }
     }
-    envinorment {
+    environment {
         DOCKERHUB_CREDENTIALS = credentials('token69')
       stages {
         stage('docker build') {
